@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* Reset CSS */
 * {
     margin: 0;
@@ -8,7 +8,7 @@
 
 /*parte das letras e cor das metas*/
 body {
-    font-family:Protest Revolution ;
+    font-family:Noto Sans ;
     font-size: 18px;
     background-color: #000000;
     color:  #948a8a;
