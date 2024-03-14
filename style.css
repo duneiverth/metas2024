@@ -10,15 +10,15 @@
 body {
     font-family:Noto Sans ;
     font-size: 18px;
-    background-color: #ff92f4;
+    background-color: #196050;
     color:  #948a8a;
     padding: 47px;
 }
 
 /*parte do titulo*/
 header {
-    background-color: #ff92f4;
-    color: #6c6464;
+    background-color: #196050;
+    color: #CC8105;
     padding: 10px 0;
     text-align: center;
 }
