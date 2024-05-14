@@ -5,15 +5,18 @@ for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
 
         for (let j = 0; j < botoes.length; j++) {
-            botoes[j].classList.remove("ativo");
-            textos[j].classList.remove("ativo");
+            if (botoes[j]) {
+                botoes[j].classList.remove("ativo");
+            }
+            if (textos[j]) {
+                textos[j].classList.remove("ativo");
+            }
         }
 
         botoes[i].classList.add("ativo");
         textos[i].classList.add("ativo");
     }
 }
-
 //cria as constantes e a lista "tempo" dos objetivos ou metas
 const contadores = document.querySelectorAll(".contador");
 const tempoObjetivo1 = new Date("2024-02-02T00:00:00");
@@ -36,23 +39,21 @@ function calculaTempo(tempoObjetivo) {
     horas %= 24;    //obtem o resto da divisão das horas
 
     //a partir daqui fazer o da tela
-
-    return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
-}
-   if(tempoFinal > 0){
-     return dias + " dias " + minutos + " minutos " + segundos + " segundos ";
-   }else{
-    return "PRAZO ENCERRADO!!!!!!!!!"
-   }
-   function atualizaCromometro(){
-    //laço de repetição para interagir com todos os objetivos
-    for(let i = 0; i< contadores.length; i++){
-        contadores[1].textContent = calculaTempo(tempos[1]); //textContent mostra na tela
+    if (tempoFinal > 0) {
+        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
+    } else {
+        return " PRAZO ENCERRADO!!! "
     }
-   }
+}
+function atualizaCronometro() {
+    //laço de repetição para interagir com todos os objetivos
+    for (let i = 0; i < contadores.length; i++) {
+        contadores[i].textContent = calculaTempo(tempos[i]); //textContent mostra na tela o medidor de tempo
+    }
+}
 
-   function comecaCrocometro(){
-    atualizaCromometro(); //chamado da função criaa anteriormente dentro esta função 
-    setInterval(atualizaCromometro,1000); //função que faz a contagem do tempo a cada seg. 
-   }
-   comecaCrometro(); //chama a função que inicia o cronometro
+function comecaCronometro() {
+    atualizaCronometro(); //chama da função criada anterior dentrodesta função
+    setInterval(atualizaCronometro, 1000); //função que faz a vontagem dos seg.
+}
+comecaCronometro(); //chamada da função que indica o cronometro
